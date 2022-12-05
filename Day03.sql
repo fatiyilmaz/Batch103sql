@@ -129,6 +129,7 @@ SELECT * FROM musteriler WHERE urun_id NOT BETWEEN 20 and 40; -- 20 ve 40 disind
 
 --SUBQUERIES(ALT SORGU) Iki tablodan gecici olarak tek bir tabloda sorgulama--> sorgu icinde sorgu
 
+
 CREATE TABLE calisanlar2
 (
 id int,
@@ -172,6 +173,9 @@ SELECT isim,maas,sehir FROM calisanlar2
 WHERE isyeri IN (SELECT marka_isim FROM markalar WHERE marka_id>101);
 
 ÖDEV- Ankara’da calisani olan markalarin marka id'lerini ve calisan sayilarini listeleyiniz.
+SELECT urun_isim,musteri_isim FROM  nisan
+WHERE not exists (SELECT urun_isim FROM mart WHERE  mart.urun_isim=nisan.urun_isim);
+
 
 -- AGGREGATE METHOD
 -- Calisanlar toplasundan maksimum maası listeleyelim
@@ -228,6 +232,8 @@ SELECT marka_isim,calisan_sayisi,
 (SELECT max (maas) FROM calisanlar2 WHERE isyeri=marka_isim) as enyuksekmaas,
 (SELECT min (maas) FROM calisanlar2 WHERE isyeri=marka_isim) as endusukmaas
 FROM markalar
+
+SELECT 
 
 -- VIEW KULLANIMI
 
@@ -295,6 +301,11 @@ WHERE exists (SELECT urun_isim FROM mart WHERE mart.urun_isim=nisan.urun_isim)
 --Her iki ayda ortak satilmayan ürünlerin URUN_ISIM'lerini ve  bu ürünleri
 --NİSAN ayında satın alan MUSTERI_ISIM'lerini listeleyen bir sorgu yazınız. ODEV
 
+SELECT  urun_isim,musteri_isim FROM nisan
+WHERE NOT EXISTS (SELECT urun_isim FROM mart WHERE mart.urun_isim=nisan.urun_isim);
+
+SELECT * FROM mart;
+SELECT * FROM nisan;
 
 
 -- DML --> UPDATE
