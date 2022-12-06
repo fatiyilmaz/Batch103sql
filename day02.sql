@@ -43,14 +43,15 @@ kayit_tarih date
 );
 -- PRIMARY KEY ataması 2. yol
 -- Eğer CONSTRAINT ismini kendimiz vermek istersek bu yolu kullanabiliriz
-CREATE TABLE ogrenciler9
+CREATE TABLE ogrenciler11
 (
 ogrenci_no char(7),
 isim varchar(20), 
 soyisim varchar(25),
 not_ort real,
 kayit_tarih date,
-CONSTRAINT ogr PRIMARY KEY(ogrenci_no)    
+PRIMARY KEY(ogrenci_no,isim), -- bir tabloda normal de bir key olur, bu sekilde composit primary key atayabiliriz kendimiz şema da bir key gorulur. ogr10 diye.
+UNIQUE (soyisim,not_ort)	  -- bu sekilde de olur.
 );
 CREATE TABLE ogrenciler10
 (

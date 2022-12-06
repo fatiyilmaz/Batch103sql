@@ -172,9 +172,9 @@ WHERE isyeri IN (SELECT marka_isim FROM markalar WHERE calisan_sayisi>15000);
 SELECT isim,maas,sehir FROM calisanlar2 
 WHERE isyeri IN (SELECT marka_isim FROM markalar WHERE marka_id>101);
 
-ÖDEV- Ankara’da calisani olan markalarin marka id'lerini ve calisan sayilarini listeleyiniz.
-SELECT urun_isim,musteri_isim FROM  nisan
-WHERE not exists (SELECT urun_isim FROM mart WHERE  mart.urun_isim=nisan.urun_isim);
+-- Odev; Ankara’da calisani olan markalarin marka id'lerini ve calisan sayilarini listeleyiniz.
+select marka_id,calisan_sayisi from markalar
+where marka_isim in (select isyeri from calisanlar2 where sehir = 'Ankara');
 
 
 -- AGGREGATE METHOD
@@ -298,8 +298,8 @@ WHERE exists (SELECT urun_id FROM nisan WHERE mart.urun_id=nisan.urun_id)
 SELECT urun_isim, musteri_isim FROM nisan
 WHERE exists (SELECT urun_isim FROM mart WHERE mart.urun_isim=nisan.urun_isim)
 
---Her iki ayda ortak satilmayan ürünlerin URUN_ISIM'lerini ve  bu ürünleri
---NİSAN ayında satın alan MUSTERI_ISIM'lerini listeleyen bir sorgu yazınız. ODEV
+-- ODEV; Her iki ayda ortak satilmayan ürünlerin URUN_ISIM'lerini ve  bu ürünleri
+--NİSAN ayında satın alan MUSTERI_ISIM'lerini listeleyen bir sorgu yazınız. 
 
 SELECT  urun_isim,musteri_isim FROM nisan
 WHERE NOT EXISTS (SELECT urun_isim FROM mart WHERE mart.urun_isim=nisan.urun_isim);
