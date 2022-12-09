@@ -125,6 +125,7 @@ SELECT p1.isim AS personel_ismi, p2.isim AS yonetici_ismi
 FROM personel p1 INNER JOIN personel p2 ON p1.yonetici_id = p2.id;
 
 
+select p1.title , p2.title  from personel p1 inner join personel p2 on p1.yonetici_id = p2.id
 
 
 -- LIKE CONDITION 
@@ -190,7 +191,13 @@ select * from musteriler where isim like '_a%'
 select * from musteriler where isim like '__s%'
 
 -- sayfa 113 odev 
- 
+
+--Ucuncu harfi s olan ismi 4 harfli musterilerin tum bilgilerini yazdiran QUERY yazin
+select * from musteriler where isim  '_s';
+--Ilk harfi F olan en az 4 harfli musterilerin tum bilgilerini yazdiran QUERY yazin
+select * from musteriler where isim  'F___%';
+--Ikinci harfi a,4.harfi m olan musterilerin tum bilgilerini yazdiran QUERY yazin
+select * from musteriler where isim ~~ '_a_m%'; 
  
  
  
@@ -238,6 +245,23 @@ select * from kelimeler where kelime ~ '^[as]' -- ^ --> baslayan demek. a veya s
 
 -- SORU 4. m veya f ile biten kelimelerin tum bilgilerini yazdiran QUERY yazin
 select * from kelimeler where kelime ~ '[mf]$'
+
+
+--ODEV
+--SORU 1 : ilk harfi h olmayan kelimelerin tum bilgilerini yazdiran QUERY yazin
+select * from kelimeler where kelime not like 'h%'
+
+--SORU 2 : a harfi icermeyen kelimelerin tum bilgilerini yazdiran QUERY yazin
+select * from kelimeler where kelime not ilike '%a%'
+
+--SORU 3 : ikinci ve ucuncu harfi ‘de’ olmayan kelimelerin tum bilgilerini yazdiran QUERY yazin
+select * from kelimeler where kelime not like '_de'
+
+--SORU 4 : 2. harfi e,i veya o olmayan kelimelerin tum bilgilerini yazdiran QUERY yazin
+select * from kelimeler where kelime !~ '[_eio]'
+
+
+
 
 
 -- NOT LIKE KISMI ODEV
