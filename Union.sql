@@ -7,6 +7,7 @@ UNION: sadece benzersiz verileri alır.
 
 UNION ALL: benzerli verileri de alır.
 
+IN: benzerli verileri de alır.
 
 Syntax:
 -------

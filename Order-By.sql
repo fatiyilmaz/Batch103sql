@@ -72,7 +72,7 @@ select * from magaza
 --SORU1: Satılan urun_adi'na göre gruplandırarak,satılan max urun_miktari'nı ve min urun_miktari'nı,
 --min urun_miktari'na göre sıralayarak listeleyiniz
 
-select urun_adi, max (urun_miktari) as max, min (urun_miktari) as min from magaza --avregead methodlarinda min max kullanacagim icin as ile gecici isim vermek zorundayim.
+select urun_adi, max (urun_miktari) as max, min (urun_miktari) as min from magaza --aggregate methodlarinda min max kullanacagim icin as ile gecici isim vermek zorundayim.
 group by urun_adi
 order by min
 
