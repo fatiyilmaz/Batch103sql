@@ -31,40 +31,50 @@
  
                                               *CATEGORIES*
 
-DDL ==> Data definition Language
+DDL ==> Data Definition Language     ==> Veri Tanımlama Dili
 CREATE | DROP | ALTER | TRUNCATE | RENAME | COMMENT
 
-DQL ==>
+
+DQL ==> Data Query Language          ==> Veri Sorgulama Dili
 SELECT
 
-DML ==>
+
+DML ==> Data Manipulation Language   ==> Veri Işleme Dili
 INSERT | UPDATE | DELETE | LOCK | CALL | EXPLAIN PLAN
 
-DCL ==>
+
+DCL ==> Data Control Language        ==> Veri Kontrol Dili
 GRANT | REVOKE
 
-TCL ==>
+
+TCL ==> Transaction Control Language ==> İşlem Kontrol Dili
 COMMIT | ROLLBACK | SAVEPOINT | SET TRANSACTION
+
 
                                              *LOGICAL*
 AND | OR | NOT | ANY | SOME | ALL | BETWEEN | IN | EXISTS | LIKE | IS NULL | UNIQUE
-                                          
+ 
+ 
 										  
 									    *IMPORTANT KEYWORDS*
 WHERE | DISTINCT | LIMIT | ORDER BY | DESC | ASC | AS | FROM | SET | VALUES | CASE | DEFAULT	
+
 
 
                                          *DATABASE OBJECTS*
 TABLE | VIEW | SYNONYM | SEQUENCE | INDEX | TRIGGER
 
 
+
                                             *CONSTRAINTS*
 NOT NULL | UNIQUE | PRIMARY KEY | FOREIGN KEY | CHECK | DEFAULT 
 
 
+
                                        *AGGREGATION FUNCTIONS*
 AVG | COUNT | MAX | MIN | SUM
-               
+
+
 			   
 			                           *AGGREGATION KEYWORDS*
 GROUP BY | HAVING 
