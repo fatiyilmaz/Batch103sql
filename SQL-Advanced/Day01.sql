@@ -162,7 +162,7 @@ begin
  raise notice '% % % ', rec.id, rec.title, rec.type;
 end $$; 
  
-
+--sütunun tüm  degerlerini istiyorsak row type,  sadece belli degerleri istiyorsak, tamamı değilse record type.
 
 
 
